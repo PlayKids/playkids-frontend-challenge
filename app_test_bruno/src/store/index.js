@@ -1,10 +1,36 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Product from '@/api/product'
+import VuexPersistence from 'vuex-persist'
+import createMutationsSharer from 'vuex-shared-mutations'
 
 Vue.use(Vuex)
 
+const vuexCookie = new VuexPersistence({
+  storage: window.localStorage,
+  filter: (mutation) => {
+    const persisted = [
+      'mutateProducts',
+      'mutateOrders',
+      'mutateBill'
+    ]
+    return persisted.includes(mutation.type)
+  }
+})
+
+const sharedMutations = createMutationsSharer({
+  predicate: (mutation, state) => {
+    const shared = [
+      'mutateProducts',
+      'mutateOrders',
+      'mutateBill'
+    ]
+    return shared.includes(mutation.type)
+  }
+})
+
 export default new Vuex.Store({
+  plugins: [vuexCookie.plugin, sharedMutations],
   state: {
     products: {},
     orders: [],
