@@ -50,10 +50,10 @@ export default {
 
 .container {
   position: relative;
-  z-index: 20;
 }
 .search-bar {
   top: 5rem;
+  z-index: 9;
   background-color: white;
   input {
     width: 100%;
