@@ -2,7 +2,10 @@
   <main>
     <SearchBar @filtered="filteredResults = $event" />
     <div class="container pb-7">
-      <h1 class="view_title">Orders</h1>
+      <h1 class="view_title flex justify-space-between">
+        Orders
+        <button @click="clearOrders()" class="btn text-base text-color-1"><i class="icss-bin" /></button>
+      </h1>
       <transition-group name="fade" tag="section">
         <h2 v-if="returnOrders.length === 0" key="empty">No results</h2>
         <article v-for="order in returnOrders"
@@ -45,6 +48,18 @@ export default {
   mounted () {
     if (this.$store.getters.getProducts.length === 0) {
       this.$store.dispatch('setProducts')
+    }
+  },
+  methods: {
+    clearOrders () {
+      this.$store.dispatch('setModalConfirm', {
+        active: true,
+        content: 'Clear order and billing data?',
+        callback: () => {
+          this.$store.dispatch('setClearOrders')
+          this.$store.dispatch('setModalConfirm', { active: false })
+        }
+      })
     }
   }
 }
