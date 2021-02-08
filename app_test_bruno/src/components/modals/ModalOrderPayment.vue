@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import Modal from './_Modal'
+import Modal from './Modal'
 import { required, minLength } from 'vuelidate/lib/validators'
 
 export default {

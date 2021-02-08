@@ -40,7 +40,7 @@
 
 <script>
 import PixelImg from '@/components/helpers/PixelImg'
-import Modal from './_Modal'
+import Modal from './Modal'
 
 export default {
   components: {

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Modal from './_Modal'
+import Modal from './Modal'
 import OrderSummary from '@/components/order/Summary.vue'
 
 export default {
