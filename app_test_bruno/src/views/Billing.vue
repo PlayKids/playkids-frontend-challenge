@@ -85,4 +85,12 @@ table {
     background-color: #f1f1f1;
   }
 }
+@media (min-width: unquote(map-get($breakpoints,'tablet'))) {
+  section {
+    width: 50%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+}
 </style>
