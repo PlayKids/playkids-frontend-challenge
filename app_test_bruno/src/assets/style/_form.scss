@@ -4,8 +4,7 @@ input[type=text], input[type=number], textarea {
   font-family: $font-primary;
   box-sizing: border-box;
   border-radius: 5px;
-  background-color: $color-3;
-  border: 1px $color-2 solid;
+  border: 2px $color-2 solid;
   outline: 0;
   &:focus {
     outline: 0;
