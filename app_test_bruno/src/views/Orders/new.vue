@@ -26,25 +26,30 @@
         />
       </section>
       <ButtonPlaceOrder @click="showSummary = true" :disabled="!isValidOrder()" />
-      <ModalProduct
-        v-if="selectedProduct"
-        :selected-product="selectedProduct"
-        @closed="resetSelected()"
-        @updated="updateOrder($event)"
-      />
-      <ModalOrderSummary
-        v-if="showSummary"
-        :order="returnOrder"
-        @cancel="showSummary = false"
-        @continue="showSummary = false; showPayment = true"
-       />
-      <ModalOrderPayment
-        v-if="showPayment"
-        :order="returnOrder"
-        :subtotal="returnTotal"
-        @cancel="showPayment = false"
-        @confirm="placeOrder()"
-      />
+      <transition-group name="fade" mode="out-in">
+        <ModalProduct
+          key="Product"
+          v-if="selectedProduct"
+          :selected-product="selectedProduct"
+          @closed="resetSelected()"
+          @updated="updateOrder($event)"
+        />
+        <ModalOrderSummary
+          key="OrderSummary"
+          v-if="showSummary"
+          :order="returnOrder"
+          @cancel="showSummary = false"
+          @continue="showSummary = false; showPayment = true"
+        />
+        <ModalOrderPayment
+          key="OrderPayment"
+          v-if="showPayment"
+          :order="returnOrder"
+          :subtotal="returnTotal"
+          @cancel="showPayment = false"
+          @confirm="placeOrder()"
+        />
+      </transition-group>
   </main>
 </template>
 
