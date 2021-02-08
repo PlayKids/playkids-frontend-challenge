@@ -40,7 +40,12 @@ export default new Vuex.Store({
       customerName: null,
       orderDate: null
     },
-    bill: {}
+    bill: {},
+    modalConfirm: {
+      active: false,
+      content: '',
+      callback: null
+    }
   },
   mutations: {
     mutateProducts (state, data) {
@@ -56,6 +61,12 @@ export default new Vuex.Store({
     },
     mutateNewOrder (state, data) {
       state.newOrder = data
+    },
+    mutateClearOrders (state, data) {
+      state.orders = []
+    },
+    mutateModalConfirm (state, data) {
+      state.modalConfirm = data
     }
   },
   actions: {
@@ -92,6 +103,12 @@ export default new Vuex.Store({
     },
     setNewOrder ({ commit }, data) {
       commit('mutateNewOrder', data)
+    },
+    setClearOrders ({ commit }) {
+      commit('mutateClearOrders')
+    },
+    setModalConfirm ({ commit }, data) {
+      commit('mutateModalConfirm', data)
     }
   },
   getters: {
@@ -103,6 +120,9 @@ export default new Vuex.Store({
     },
     getNewOrder (state) {
       return state.newOrder
+    },
+    getModalConfirm (state) {
+      return state.modalConfirm
     }
   }
 })
