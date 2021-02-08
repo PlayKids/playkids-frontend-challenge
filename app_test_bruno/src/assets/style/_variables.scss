@@ -1,0 +1,61 @@
+ @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --font: 'Asap Condensed', sans-serif;
+  --color-0: white;
+  --color-1: #2dbc94;
+  --color-2: #a6e6db;
+  --color-3: #ebd999;
+  --mobile: 400px;
+  --tablet: 600px;
+  --desktop: 1000px;
+}
+
+$font-primary: var(--font);
+$color-0: var(--color-0);
+$color-1: var(--color-1);
+$color-2: var(--color-2);
+$color-3: var(--color-3);
+
+$mobile: 400px;
+$tablet: 600px;
+$desktop: 1000px;
+
+$colors: [$color-0, $color-1, $color-2, $color-3];
+
+$breakpoints: (
+  'mobile': '400px',
+  'tablet': '600px',
+  'desktop': '1000px',
+);
+
+$max-w: 1024px;
+
+$radiuses: (
+  'xs': '3px',
+  'sm': '5px',
+  'md': '10px',
+  'lg': '20px',
+  'full': '999px'
+);
+
+$sizes: (
+  'xs': '0.6rem',
+  'sm': '0.8rem',
+  'base': '1rem !important',
+  'md': '1.4rem',
+  'lg': '2rem',
+  'xl': '3rem',
+  '2xl': '5rem'
+);
+
+$units: (
+  '0': '0',
+  '1': '0.5rem',
+  '2': '0.8rem',
+  '3': '1rem',
+  '4': '1.2rem',
+  '5': '1.5rem',
+  '6': '2rem',
+  '7': '3rem'
+);

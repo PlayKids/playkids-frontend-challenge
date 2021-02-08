@@ -1,0 +1,66 @@
+body {
+  font-family: $font-primary;
+  color: $color-1;
+  font-size: 14px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+@each $sizeName, $size in $sizes {
+  .text-#{$sizeName} {
+    font-size: #{$size};
+  };
+};
+h1,h2,h3,h4,h5,p {
+  padding: 0;
+  margin: 0.5rem 0
+}
+@for $i from 0 through length($colors) {
+  .text-color-#{$i}) {
+    color: var(--color-#{$i});
+  }
+}
+
+$aligns: ['left', 'right', 'center'];
+@each $v in $aligns {
+  .text-#{$v} {
+    text-align: #{$v};
+  };
+};
+.text-white {
+  color: white
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $color-1
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.view_title {
+  border-bottom: 2px solid $color-1
+}
+
+hr {
+  border: 0;
+  border-bottom-width: 1px;
+  border-color: $color-1;
+  &.dotted {
+    border-style: dotted;
+  }
+}

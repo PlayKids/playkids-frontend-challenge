@@ -1,0 +1,31 @@
+input[type=text], input[type=number], textarea {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: $font-primary;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: $color-3;
+  border: 1px $color-2 solid;
+  outline: 0;
+  &:focus {
+    outline: 0;
+    transition: all 200ms;
+    box-shadow: 0 0 0 2px $color-1;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+label {
+  margin-bottom: 5px;
+}
+.invalid>label {
+  color: red
+}
