@@ -2,8 +2,8 @@
   <main class="container p-3">
     <h1 class="view_title">Billing</h1>
     <div v-if="loaded">
-      <h3 class="flex justify-space-between text-md">
-        <span>Total revenue:</span>
+      <h3 class="flex text-md">
+        <span class="mr-2">Total revenue:</span>
         <span>{{revenue | TO_BRL}}</span>
       </h3>
       <hr class="dotted" />

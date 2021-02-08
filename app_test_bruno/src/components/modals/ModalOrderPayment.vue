@@ -16,6 +16,7 @@
             v-mask="field.mask"
             v-model="form[$name].value"
             :placeholder="field.placeholder"
+            :class="!isValid($name) ? '' : 'border-color-red'"
             @blur="$v.form[$name].$touch"
             @focus="$v.form[$name].$reset"
           />
@@ -141,7 +142,7 @@ export default {
   methods: {
     isValid (field) {
       if (this.$v.form[field]) {
-        return this.$v.form[field].value.$invalid && this.$v.form[field].value.$dirty ? 'invalid' : ''
+        return this.$v.form[field].value.$invalid && this.$v.form[field].value.$dirty ? 'invalid' : false
       }
     },
     getProduct (id) {

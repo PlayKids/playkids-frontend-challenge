@@ -2,7 +2,7 @@
   <main class="modal">
     <section class="modal__overlay">
     </section>
-    <section class="modal__content">
+    <section class="modal__content rounded-sm">
       <header class="bg-color-1 text-white p-2">
         <slot name="header" />
       </header>
