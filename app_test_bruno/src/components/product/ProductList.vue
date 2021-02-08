@@ -14,7 +14,9 @@
           <li v-for="product of returnProducts" :key="product.id" @click="$emit('picked', product)">
             <strong v-show="selected[product.id]" class="counter text-md">&times;{{selected[product.id]}}</strong>
             <figure class="rounded-sm shadow" :class="selected[product.id] ? 'bg-color-1 text-white' : 'bg-color-2'">
-              <PixelImg class="thumb" />
+              <div class="shimmer w-12 mb-1">
+                <PixelImg class="thumb" />
+              </div>
               <figcaption>
                 <h3>{{product.name}}</h3>
                 <big>{{product.price | TO_BRL}}</big>
@@ -124,10 +126,15 @@ ul {
       &.dummy {
         background-color: #e1e1e1;
       }
+      .shimmer {
+        display: flex;
+        &::after {
+          display: none;
+        }
+      }
       .thumb {
         width: 100%;
         background-size: cover;
-        margin-bottom: 0.5rem;
       }
       figcaption {
         display: flex;
